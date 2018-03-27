@@ -27,7 +27,7 @@ Bin Packer::pack(std::vector<TextureInfo>& infos, const bool& allowFlip)
 		previous = &info;
 	}
 
-	//calculate bin size if textures are all the same size
+	//calculate bin size if textures share all the same size
 	if (sameSize)
 	{
 		auto count = infos.size();
