@@ -7,12 +7,12 @@ Inspired by [aggsol][1]. Algorithm for packing from [blackspawn][2].
 
 Folder with 500 random generated rectangle images:
 
-<img src="https://cdn.discordapp.com/attachments/425728769236664350/428126812619669505/images.PNG" width="400">
+<img src="https://cdn.discordapp.com/attachments/425728769236664350/428126812619669505/images.PNG" width="500">
 
 Dragging the folder on the TexturePacker.exe will create an `atlas.png` and an `atlas.json`:
 
 <img src="https://cdn.discordapp.com/attachments/425728769236664350/428126828184600586/atlas.png"
-width="400">
+width="500">
 
 ```json
 {
@@ -34,7 +34,7 @@ width="400">
       "h": 100,
       "flip": 0
     },
-    . . .
+
 ```
 
 The packer can be executed via command line with the following arguments:
@@ -56,7 +56,7 @@ Here all images with a file name like "2`xx`.png" in the directory "path/to/imag
 
 Result atlas:
 
-<img src="https://cdn.discordapp.com/attachments/425728769236664350/428126843707719680/atlas_args.png" width="400">
+<img src="https://cdn.discordapp.com/attachments/425728769236664350/428126843707719680/atlas_args.png" width="500">
 
 Looking at the atlas.json, there are some images which got flipped.
 
