@@ -3,7 +3,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <string>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <regex>
 
 #include <SFML/Graphics.hpp>
@@ -14,6 +14,28 @@
 #include "ImageRenderer.h"
 
 namespace fs = std::experimental::filesystem;
+
+std::vector<std::string> getFileNamesInDirectory(const std::string &directory, const std::string &fileRegex)
+{
+	std::vector<std::string> files;
+	auto fileNameRegex = std::regex("[a-zA-Z0-9-_\\{\\}\\(\\)\\[\\]\\.]+$"); //escaping regex escapes...
+	auto userRegex = std::regex(fileRegex);
+	
+	for (auto &itr : fs::directory_iterator(directory))
+	{
+		const auto path = itr.path().string();
+		std::smatch match;
+
+		if (std::regex_search(path.begin(), path.end(), match, fileNameRegex))
+		{
+			const std::string fileName = match[0];
+			if (std::regex_search(fileName.begin(), fileName.end(), match, userRegex))
+				files.push_back(fileName);
+		}
+	}
+
+	return files;
+}
 
 int main(int argc, const char** argv)
 {
@@ -46,28 +68,21 @@ int main(int argc, const char** argv)
 	}
 
 	std::replace(folderPath.begin(), folderPath.end(), '\\', '/');
-	auto userRegex = std::regex(fileRegex);
-	auto fileNameRegex = std::regex("[a-zA-Z0-9-_\\{\\}\\(\\)\\[\\]\\.]+$"); //escaping regex escapes...
 	auto textures = std::unordered_map<std::string, sf::Texture>();
 	auto textureInfos = std::vector<TextureInfo>();
 
-	for (auto &itr : fs::directory_iterator(folderPath))
+	for (auto &file : getFileNamesInDirectory(folderPath, fileRegex))
 	{
-		const auto path = itr.path().string();
-
-		std::smatch match;
-		if (std::regex_search(path.begin(), path.end(), match, userRegex))
+		auto texture = sf::Texture();
+		if (texture.loadFromFile(folderPath + "/" + file))
 		{
-			auto texture = sf::Texture();
-			if (texture.loadFromFile(path))
-			{
-				std::regex_search(path.begin(), path.end(), match, fileNameRegex);
-				auto info = TextureInfo{ Rectangle(texture.getSize().x, texture.getSize().y), match[0]};
-				textures.emplace(match[0], texture);
-				textureInfos.push_back(info);
-			}
+			auto info = TextureInfo{ Rectangle(texture.getSize().x, texture.getSize().y), file };
+			textures.emplace(file, texture);
+			textureInfos.push_back(info);
 		}
+
 	}
+
 
 	auto bin = Packer::pack(textureInfos, allowFlip);
 	JsonConverter::saveToJson(folderPath, bin);

@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "TextureInfo.h"
 
 std::ostream& operator<<(std::ostream& stream, const TextureInfo& info)
