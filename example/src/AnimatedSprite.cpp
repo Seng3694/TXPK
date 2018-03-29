@@ -32,7 +32,7 @@ void AnimatedSprite::draw(sf::RenderTarget &target, sf::RenderStates states)
 	
 	if (sprite)
 	{
-		states.transform = getTransform();
+		states.transform.combine(getTransform());
 		target.draw(*sprite, states);
 	}
 

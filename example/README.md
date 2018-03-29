@@ -23,21 +23,33 @@ The example app loads the sprites and animates them.
 
 ![result][5]
 
-The hit animation does have rotated sprites.
+### How rotation is handled in the TexturePacker ###
+
+![rotation][7]
+
+The texture gets rotated by 90° and then the origin will be moved 
 
 ```cpp
-sf::Sprite sprite(atlas.texture);
-sprite.setTextureRect({ texture.x, texture.y, texture.w, texture.h });
-
-if (texture.flip == true)
+if(texture.flip == true)
 {
-    sprite.setOrigin(texture.h, 0);
-    sprite.setRotation(-90);
+    sprite.setRotation(90);
+    sprite.setOrigin(0, texture.width); 
 }
-
-//and so on
+//source: https://github.com/Seng3694/TexturePacker/blob/master/app/src/ImageRenderer.cpp
 ```
 
+This step has to be reversed:
+
+```cpp
+if (texture.flip == true)
+{
+    sprite.setOrigin(texture.height, 0);
+    sprite.setRotation(-90);
+}
+//source: https://github.com/Seng3694/TexturePacker/blob/master/example/src/Animation.cpp
+```
+
+### Does this litter my code with rotation hacks? ###
 The sprites are stored in an `AnimatedSprite` class which has it's own transform. When drawing the `AnimatedSprite` to the screen the transform will be combined with the backing sprite. So no one using this class would ever notice the rotation applied while loading the texture.
 
 [1]: https://jesse-m.itch.io/skeleton-pack
@@ -46,6 +58,7 @@ The sprites are stored in an `AnimatedSprite` class which has it's own transform
 [4]: http://www.1001fonts.com/arcadeclassic-font.html
 [5]: https://cdn.discordapp.com/attachments/425728769236664350/428711346540904478/skeleton_animation.gif
 [6]: https://github.com/nlohmann/json
+[7]: https://cdn.discordapp.com/attachments/425728769236664350/428547432335409153/rotation.gif
 
 ## License ##
 
