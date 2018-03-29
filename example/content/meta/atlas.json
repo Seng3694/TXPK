@@ -1,0 +1,557 @@
+{
+  "path": "content/atlasses/atlas.png",
+  "bin": [
+    {
+      "path": "skeleton_attack_1.png",
+      "x": 0,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_10.png",
+      "x": 43,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_11.png",
+      "x": 86,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_12.png",
+      "x": 129,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_13.png",
+      "x": 172,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_14.png",
+      "x": 215,
+      "y": 0,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_15.png",
+      "x": 0,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_16.png",
+      "x": 0,
+      "y": 74,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_17.png",
+      "x": 0,
+      "y": 111,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_18.png",
+      "x": 0,
+      "y": 148,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_2.png",
+      "x": 0,
+      "y": 185,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_3.png",
+      "x": 0,
+      "y": 222,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_4.png",
+      "x": 43,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_5.png",
+      "x": 86,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_6.png",
+      "x": 129,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_7.png",
+      "x": 172,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_8.png",
+      "x": 215,
+      "y": 37,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_attack_9.png",
+      "x": 43,
+      "y": 74,
+      "w": 43,
+      "h": 37,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_1.png",
+      "x": 43,
+      "y": 111,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_10.png",
+      "x": 43,
+      "y": 143,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_11.png",
+      "x": 43,
+      "y": 175,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_12.png",
+      "x": 43,
+      "y": 207,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_13.png",
+      "x": 43,
+      "y": 239,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_14.png",
+      "x": 86,
+      "y": 74,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_15.png",
+      "x": 119,
+      "y": 74,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_2.png",
+      "x": 152,
+      "y": 74,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_3.png",
+      "x": 185,
+      "y": 74,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_4.png",
+      "x": 218,
+      "y": 74,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_5.png",
+      "x": 86,
+      "y": 106,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_6.png",
+      "x": 86,
+      "y": 138,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_7.png",
+      "x": 86,
+      "y": 170,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_8.png",
+      "x": 86,
+      "y": 202,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_dead_9.png",
+      "x": 86,
+      "y": 234,
+      "w": 33,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_hit_1.png",
+      "x": 251,
+      "y": 74,
+      "w": 30,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_hit_2.png",
+      "x": 119,
+      "y": 106,
+      "w": 32,
+      "h": 30,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_hit_3.png",
+      "x": 151,
+      "y": 106,
+      "w": 32,
+      "h": 30,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_hit_4.png",
+      "x": 183,
+      "y": 106,
+      "w": 32,
+      "h": 30,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_hit_5.png",
+      "x": 215,
+      "y": 106,
+      "w": 32,
+      "h": 30,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_hit_6.png",
+      "x": 247,
+      "y": 106,
+      "w": 32,
+      "h": 30,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_hit_7.png",
+      "x": 119,
+      "y": 136,
+      "w": 30,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_hit_8.png",
+      "x": 119,
+      "y": 168,
+      "w": 30,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_1.png",
+      "x": 258,
+      "y": 0,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_10.png",
+      "x": 0,
+      "y": 259,
+      "w": 32,
+      "h": 24,
+      "flip": 1
+    },
+    {
+      "path": "skeleton_idle_11.png",
+      "x": 258,
+      "y": 37,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_2.png",
+      "x": 119,
+      "y": 200,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_3.png",
+      "x": 119,
+      "y": 232,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_4.png",
+      "x": 149,
+      "y": 136,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_5.png",
+      "x": 173,
+      "y": 136,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_6.png",
+      "x": 197,
+      "y": 136,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_7.png",
+      "x": 221,
+      "y": 136,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_8.png",
+      "x": 245,
+      "y": 136,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_idle_9.png",
+      "x": 149,
+      "y": 168,
+      "w": 24,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_13.png",
+      "x": 149,
+      "y": 200,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_1.png",
+      "x": 149,
+      "y": 233,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_10.png",
+      "x": 173,
+      "y": 168,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_11.png",
+      "x": 173,
+      "y": 201,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_12.png",
+      "x": 173,
+      "y": 234,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_9.png",
+      "x": 195,
+      "y": 168,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_2.png",
+      "x": 217,
+      "y": 168,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_3.png",
+      "x": 239,
+      "y": 168,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_4.png",
+      "x": 261,
+      "y": 168,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_5.png",
+      "x": 195,
+      "y": 201,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_6.png",
+      "x": 195,
+      "y": 234,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_7.png",
+      "x": 217,
+      "y": 201,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_walk_8.png",
+      "x": 239,
+      "y": 201,
+      "w": 22,
+      "h": 33,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_react_2.png",
+      "x": 261,
+      "y": 201,
+      "w": 22,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_react_3.png",
+      "x": 217,
+      "y": 234,
+      "w": 22,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_react_4.png",
+      "x": 239,
+      "y": 234,
+      "w": 22,
+      "h": 32,
+      "flip": 0
+    },
+    {
+      "path": "skeleton_react_1.png",
+      "x": 261,
+      "y": 234,
+      "w": 22,
+      "h": 32,
+      "flip": 0
+    }
+  ]
+}
