@@ -1,13 +1,14 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 
 #include "JsonConverter.h"
 
-void JsonConverter::saveToJson(const std::string &path, const Bin &bin)
+void JsonConverter::saveToJson(const std::string &path, const std::string &fileName, const Bin &bin)
 {
 	std::ofstream stream;
 
-	stream.open(path + "/atlas.json");
+	stream.open(path + "/" + fileName + ".json");
 
 	stream << "{";
 	stream << "\"path\":\"" << path << "\",";

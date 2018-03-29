@@ -1,4 +1,3 @@
-set(ENGINE_BASE_DIR "${PROJECT_SOURCE_DIR}/engine")
 set(SFML_ROOT "C:/Program Files (x86)/SFML")
 
 if(WIN32)
@@ -7,23 +6,26 @@ endif()
 
 set(INCLUDE_DIRS
     include
-	${ENGINE_BASE_DIR}/include
 )
 
 set(SOURCES
-	src/Main.cpp
+	src/Rectangle.cpp
+	src/Node.cpp
+	src/Packer.cpp
+	src/TextureInfo.cpp
+	src/JsonConverter.cpp
+	src/ImageRenderer.cpp
+	src/MathHelper.cpp
 )
 
 include_directories(${INCLUDE_DIRS})
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_library(engine ${SOURCES})
 
 find_package(SFML 2 REQUIRED graphics window audio system)
 
 if(SFML_FOUND)
 	include_directories( ${SFML_INCLUDE_DIR} )
-	target_link_libraries( ${PROJECT_NAME}  ${SFML_LIBRARIES} )
-	target_link_libraries( ${PROJECT_NAME}  ${SFML_DEPENDENCIES} )
+	target_link_libraries( engine  ${SFML_LIBRARIES} )
+	target_link_libraries( engine  ${SFML_DEPENDENCIES} )
 endif()
-
-target_link_libraries( ${PROJECT_NAME} engine)

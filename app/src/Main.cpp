@@ -43,19 +43,21 @@ int main(int argc, const char** argv)
 
 	std::string fileRegex = "";
 	std::string folderPath = "";
+	std::string outputName = "atlas";
 	auto allowFlip = false;
 	auto clearColor = sf::Color::Transparent;
 
 	try
 	{
 		if (argc > 1) folderPath = argv[1];
-		if (argc > 2) allowFlip = std::stoi(argv[2]) > 0 ? 1 : 0;
-		if (argc > 3) fileRegex = argv[3];
-		if (argc > 4)
+		if (argc > 2) outputName = argv[2];
+		if (argc > 3) allowFlip = std::stoi(argv[3]) > 0 ? 1 : 0;
+		if (argc > 4) fileRegex = argv[4];
+		if (argc > 5)
 		{
 			unsigned int packed;
 			std::stringstream ss;
-			ss << std::hex << argv[4];
+			ss << std::hex << argv[5];
 			ss >> packed;
 			clearColor = sf::Color(packed);
 		}
@@ -83,13 +85,11 @@ int main(int argc, const char** argv)
 
 	}
 
-
 	auto bin = Packer::pack(textureInfos, allowFlip);
-	JsonConverter::saveToJson(folderPath, bin);
+	JsonConverter::saveToJson(folderPath, outputName, bin);
 
 	auto image = ImageRenderer::draw(bin, textures, clearColor);
-
-	image.saveToFile(std::string(folderPath) + "/atlas.png");
+	image.saveToFile(std::string(folderPath) + "/" + outputName + ".png");
 
 	return 0;
 }

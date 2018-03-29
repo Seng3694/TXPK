@@ -35,7 +35,7 @@ if(texture.flip == true)
     sprite.setRotation(90);
     sprite.setOrigin(0, texture.width); 
 }
-//source: https://github.com/Seng3694/TexturePacker/blob/master/app/src/ImageRenderer.cpp
+//source: https://github.com/Seng3694/TexturePacker/blob/master/engine/src/ImageRenderer.cpp
 ```
 
 This step has to be reversed:

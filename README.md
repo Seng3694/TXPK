@@ -43,16 +43,18 @@ The packer can be executed via command line with the following arguments:
 
 `arg2: allowFlip (default=0 => no flip)` (90° spin)
 
-`arg3: fileRegex (default="" => take all)`
+`arg3: outputName (default="atlas")`
 
-`arg4: atlasBackgroundColor (default="00000000" => transparent)` (RGBA)
+`arg4: fileRegex (default="" => take all)`
+
+`arg5: atlasBackgroundColor (default="00000000" => transparent)` (RGBA)
 
 Example:
 ```
->TexturePacker.exe "path/to/textures" "1" "[2]{1}[0-9]{2}(.png)$" "ff00ffff"
+>TexturePacker.exe "path/to/textures" "atlas" "1" "[2]{1}[0-9]{2}(.png)$" "ff00ffff"
 ```
 
-Here all images with a file name like "2`xx`.png" in the directory "path/to/images" will be packed. They will be flipped if it's appropriate and the resulting atlas will be cleared with magenta.
+Here all images with a file name like "2`xx`.png" in the directory "path/to/images" will be packed into an image named `atlas.png`. They will be flipped if it's appropriate and the resulting atlas will be cleared with magenta.
 
 Result atlas:
 
