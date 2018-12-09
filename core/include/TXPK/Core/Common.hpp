@@ -26,26 +26,26 @@ namespace txpk
 * Example usage: enum Colors {...}; GENERATE_FLAGS_OPERATORS(Colors);
 * \param enumeration The enum struct.
 */
-#define GENERATE_FLAGS_OPERATORS(enumeration)                           \
-	inline enumeration operator |(enumeration lhs, enumeration rhs)     \
-	{                                                                   \
-		return static_cast<enumeration>(                                \
-			static_cast<int>(lhs) | static_cast<int>(rhs));             \
-	}                                                                   \
-	inline enumeration operator &(enumeration lhs, enumeration rhs)     \
-	{                                                                   \
-		return static_cast<enumeration>(                                \
-			static_cast<int>(lhs) & static_cast<int>(rhs));             \
-	}                                                                   \
-	inline enumeration& operator |=(enumeration& lhs, enumeration rhs)  \
-	{                                                                   \
-		lhs = lhs | rhs;                                                \
-		return lhs;                                                     \
-	}                                                                   \
-	inline enumeration& operator &=(enumeration& lhs, enumeration rhs)  \
-	{                                                                   \
-		lhs = lhs & rhs;                                                \
-		return lhs;                                                     \
-	}																 
+#define GENERATE_FLAGS_OPERATORS(enumeration)                       \
+inline enumeration operator |(enumeration lhs, enumeration rhs)     \
+{                                                                   \
+    return static_cast<enumeration>(                                \
+        static_cast<int>(lhs) | static_cast<int>(rhs));             \
+}                                                                   \
+inline enumeration operator &(enumeration lhs, enumeration rhs)     \
+{                                                                   \
+    return static_cast<enumeration>(                                \
+    static_cast<int>(lhs) & static_cast<int>(rhs));                 \
+}                                                                   \
+inline enumeration& operator |=(enumeration& lhs, enumeration rhs)  \
+{                                                                   \
+    lhs = lhs | rhs;                                                \
+    return lhs;                                                     \
+}                                                                   \
+inline enumeration& operator &=(enumeration& lhs, enumeration rhs)  \
+{                                                                   \
+    lhs = lhs & rhs;                                                \
+    return lhs;                                                     \
+}																 
 
 }
