@@ -6,15 +6,15 @@ namespace txpk
 	void apply_margin(T** data, const uint32& width, const uint32& height, const Margin& margin)
 	{
 		/*
-		           top
-		     ______________
-			|  _____v____  |
-		   	| |		     | |
-		left|>|		     |<|right
-			| |		     | |
-			| |__________| |
-			|_______^______|
-			      bottom
+                    top
+              ______________
+             |  _____v____  |
+             | |          | |
+         left|>|          |<|right
+             | |          | |
+             | |__________| |
+             |_______^______|
+                  bottom
 		*/
 
 		const uint32 newWidth = width - margin.left - margin.right;

@@ -163,8 +163,8 @@ namespace txpk
 		  |   _________	  | __ topOffset
 		  |  |xxxxxxxxx|  |
 		  |  |xxxxxxxxx|  |
-		  |	 |xxxxxxxxx|  |
-		  |	 |xxxxxxxxx|  | __ bottomOffset
+		  |  |xxxxxxxxx|  |
+		  |  |xxxxxxxxx|  | __ bottomOffset
 		  |_______________|
 		
 		*/
