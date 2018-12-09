@@ -1,0 +1,5 @@
+add_subdirectory(dirent)
+add_subdirectory(json)
+add_subdirectory(stb_image)
+add_subdirectory(CLI)
+add_subdirectory(Catch2)

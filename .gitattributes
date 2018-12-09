@@ -1,2 +1,1 @@
-cmake/modules/* linguist-vendored=true
-example/include/json.hpp linguist-vendored=true
+ext/* linguist-vendored=true

@@ -1,0 +1,22 @@
+{
+  "recursiveFiles": false,
+  "inputDirectory": "../sprites",
+  "inputRegex": ".+(.png)$",
+  "scriptDirectory": "../scripts",
+  "outputImageDirectory": "../sheets",
+  "outputDataDirectory": "../meta",
+  "outputName": "skeleton",
+  "outputImageFormat": "png",
+  "packingAlgorithm": "Default",
+  "dataExportAlgorithms": [
+    "Json",
+    "CustomCppHeaderExporter"
+  ],
+  "keyConversionAlgorithm": "CustomEnumeratorKeyConverter",
+  "allowRotation": true,
+  "sizeConstraint": 0,
+  "constraintType": 0,
+  "clearColor": "0",
+  "trimImages": true,
+  "replaceSameTextures": true
+}

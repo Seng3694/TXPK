@@ -1,29 +1,16 @@
-set(ENGINE_BASE_DIR "${PROJECT_SOURCE_DIR}/engine")
-set(SFML_ROOT "C:/Program Files (x86)/SFML")
+set(INCLUDE_DIR
+	include
+)
 
-if(WIN32)
-	set(SFML_STATIC_LIBRARIES TRUE)
-endif()
-
-set(INCLUDE_DIRS
-    include
-	${ENGINE_BASE_DIR}/include
+set(HEADERS
+	
 )
 
 set(SOURCES
 	src/Main.cpp
 )
 
-include_directories(${INCLUDE_DIRS})
-
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-find_package(SFML 2 REQUIRED graphics window audio system)
-
-if(SFML_FOUND)
-	include_directories( ${SFML_INCLUDE_DIR} )
-	target_link_libraries( ${PROJECT_NAME}  ${SFML_LIBRARIES} )
-	target_link_libraries( ${PROJECT_NAME}  ${SFML_DEPENDENCIES} )
-endif()
-
-target_link_libraries( ${PROJECT_NAME} engine)
+include_directories(${INCLUDE_DIR})
+add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
+target_link_libraries(${PROJECT_NAME} ${ENGINE_NAME})
+target_link_libraries(${PROJECT_NAME} CLI)

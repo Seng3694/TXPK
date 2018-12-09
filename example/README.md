@@ -1,67 +1,238 @@
-# Example #
+# TXPK - Example #
 
-This is an example of how the packed atlas files could be used.
+This example uses textures from [Jesse M.][1]
 
-## Resources ##
+## Preparation ##
 
-All used resources are just for illustration purposes. 
-Graphics are from [Jesse M.][1].
-The font is from [Pizzadude][4].
-
-## Get it started ##
-The unpacked images:
-
-<img src="https://cdn.discordapp.com/attachments/425728769236664350/428704832946176000/unknown.png" width="70%">
-
-Packed atlas created by the [TexturePacker][2]:
-
-![atlas][3]
-
-Notice the rotated textures.
-
-The example app loads the sprites and animates them.
-
-![result][5]
-
-### How rotation is handled in the TexturePacker ###
-
-![rotation][7]
-
-The texture gets rotated by 90° and then the origin will be moved 
-
-```cpp
-if(texture.flip == true)
-{
-    sprite.setRotation(90);
-    sprite.setOrigin(0, texture.width); 
-}
-//source: https://github.com/Seng3694/TexturePacker/blob/master/engine/src/ImageRenderer.cpp
+The content folder in this example was setupped like this:
+```
+content
+|
+|- meta
+|
+|- scripts
+|   |- CustomCppHeaderExporter.lua
+|   |- CustomEnumeratorKeyConverter.lua
+|
+|- sheets
+|
+|- sprites
+|   |- textures...
+|
+|- txpk
+    |- skeleton.txpk
 ```
 
-This step has to be reversed:
+The textures look like this:
 
-```cpp
-if (texture.flip == true)
+<img src="../resources/skeleton_textures.png" width="600"/>
+
+The `skeleton.txpk` project file looks like this:
+
+```json
 {
-    sprite.setOrigin(texture.height, 0);
-    sprite.setRotation(-90);
+  "recursiveFiles": false,
+  "inputDirectory": "../sprites",
+  "inputRegex": ".+(.png)$",
+  "scriptDirectory": "../scripts",
+  "outputImageDirectory": "../sheets",
+  "outputDataDirectory": "../meta",
+  "outputName": "skeleton",
+  "outputImageFormat": "png",
+  "packingAlgorithm": "Default",
+  "dataExportAlgorithms": [
+    "Json",
+    "CustomCppHeaderExporter"
+  ],
+  "keyConversionAlgorithm": "CustomEnumeratorKeyConverter",
+  "allowRotation": true,
+  "sizeConstraint": 0,
+  "constraintType": 0,
+  "clearColor": "0",
+  "trimImages": true,
+  "replaceSameTextures": true
 }
-//source: https://github.com/Seng3694/TexturePacker/blob/master/example/src/Animation.cpp
 ```
 
-### Does this litter my code with rotation hacks? ###
-The sprites are stored in an `AnimatedSprite` class which has it's own transform. When drawing the `AnimatedSprite` to the screen the transform will be combined with the backing sprite. So no one using this class would ever notice the rotation applied while loading the texture.
+As you can see, the paths are all relative to each other. The packed texture will be saved to the `sheets` directory.
+Every file created by any exporter will be saved in the `meta` directory. The output files will be called `skeleton.[file extension]`. 
+The file extension is dependant on the exporter.
 
-[1]: https://jesse-m.itch.io/skeleton-pack
-[2]: https://github.com/Seng3694/TexturePacker
-[3]: https://cdn.discordapp.com/attachments/425728769236664350/428706719062032386/atlas.png
-[4]: http://www.1001fonts.com/arcadeclassic-font.html
-[5]: https://cdn.discordapp.com/attachments/425728769236664350/428711346540904478/skeleton_animation.gif
-[6]: https://github.com/nlohmann/json
-[7]: https://cdn.discordapp.com/attachments/425728769236664350/428547432335409153/rotation.gif
+The default packing algorithm ([BlackspawnPacker][2]) will be used.
 
-## License ##
+The [JsonExporter][3] and a custom CppHeader LuaExporter (which does exactly the same as the C++ counterpart. Reimplemented in Lua for showcase reasons) will be used.
 
-- [Textures from Jesse M.][1]
-- [Font from Pizzadude][4]
-- [Json library from Niels Lohmann][6]
+A custom Enumerator LuaKeyConverter will be used to generate texture keys (does exactly the same as the C++ counterpart).
+
+The textures are allowed to be rotated, trimmed and replaced if appropriate.
+
+After running `TXPK.exe skeleton.txpk` the content tree looks like this:
+
+```
+content
+|
+|- meta
+|   |- skeleton.hpp
+|   |- skeleton.json
+|
+|- scripts
+|   |- CustomCppHeaderExporter.lua
+|   |- CustomEnumeratorKeyConverter.lua
+|
+|- sheets
+|   |- skeleton.png
+|
+|- sprites
+|   |- textures...
+|
+|- txpk
+    |- skeleton.txpk
+```
+
+The header file looks like this:
+
+```cpp
+#define SKELETON_HIT_1 33
+#define SKELETON_HIT_2 34
+#define SKELETON_HIT_3 35
+#define SKELETON_HIT_4 36
+#define SKELETON_HIT_5 37
+#define SKELETON_HIT_6 38
+#define SKELETON_HIT_7 39
+#define SKELETON_HIT_8 40
+#define SKELETON_IDLE_1 41
+#define SKELETON_IDLE_2 42
+#define SKELETON_IDLE_3 43
+#define SKELETON_IDLE_4 44
+#define SKELETON_IDLE_5 45
+#define SKELETON_IDLE_6 46
+#define SKELETON_IDLE_7 47
+#define SKELETON_IDLE_8 48
+#define SKELETON_IDLE_9 49
+#define SKELETON_IDLE_10 50
+#define SKELETON_IDLE_11 51
+#define SKELETON_REACT_1 52
+#define SKELETON_REACT_2 53
+#define SKELETON_REACT_3 54
+#define SKELETON_REACT_4 55
+```
+
+Of course it starts at zero and goes way further. 
+
+The json file:
+
+```json
+{
+  "meta": {
+    "w": 215,
+    "h": 198,
+    "img": "../sheets/skeleton.png"
+  },
+  "bin": [
+    {
+      "key": 0,
+      "x": 68,
+      "y": 36,
+      "w": 32,
+      "h": 22,
+      "ox": 3,
+      "oy": 5,
+      "sw": 43,
+      "sh": 37,
+      "r": true
+    },
+    {
+      "key": 1,
+      "x": 132,
+      "y": 36,
+      "w": 32,
+      "h": 22,
+      "ox": 3,
+      "oy": 5,
+      "sw": 43,
+      "sh": 37,
+      "r": true
+    },
+    [...]
+    ]
+}
+```
+
+And the sheet:
+
+<img width="300" src="content/sheets/skeleton.png"/>
+
+## Import ##
+
+The example uses [SFML 2.5][4].
+
+The key part while importing is this function:
+
+```cpp
+CustomSprite Atlas::getSprite(int id) const
+{
+	//CustomSprite is a renderable, transformable which encapsulates 
+	//another sprite in it to combine transforms before drawing because
+	//the inner sprite has to be transformed here and should not be changed
+	CustomSprite sprite;
+
+	//subtextures are the texture informations which got loaded from the json file
+	auto itr = subTextures.find(id);
+	if (itr == subTextures.end())
+		return sprite;
+
+	const Texture& subTexture = itr->second;
+
+	//set inner sprites texture to the whole atlas
+	sprite.innerSprite.setTexture(texture);
+	//set cropping rectangle/quad
+	sprite.innerSprite.setTextureRect(sf::IntRect(subTexture.x, subTexture.y, subTexture.width, subTexture.height));
+
+	if (subTexture.rotated)
+	{
+		//if the texture got rotated we have to rotate it back
+		sprite.innerSprite.setRotation(90);
+		//and adjust the position
+		sprite.innerSprite.move(subTexture.height, 0);
+	}
+
+	//adjust the trimming offset
+	sprite.innerSprite.move(subTexture.offsetX, subTexture.offsetY);
+	
+	//the custom sprite implementation holds the width and height so you can center the origin for rotation
+	sprite.width = subTexture.sourceWidth;
+	sprite.height = subTexture.sourceHeight;
+
+	return sprite;
+}
+```
+
+![txpk_import][5]
+
+Basically the TXPK does step 1-3 and the code above reverses it with step 4-7.
+
+For more detail please check out the source code.
+
+To get the sprites in a vector you can use the keys in the exported header:
+
+```cpp
+std::vector<CustomSprite> attackSprites;
+for(unsigned int i = SKELETON_ATTACK_1; i <= SKELETON_ATTACK_18; ++i)
+    attackSprites.push_back(atlas.getSprite(i));
+```
+
+## Final Product ##
+
+![skeleton_anim][6]
+
+Simple animation with a slightly dark transparent rectangle to visualize the source texture size.
+Because the animation duration is not synced with rotation speed and i cut the gif directly after 360� it looks kind of... choppy.
+
+
+
+[1]:https://jesse-m.itch.io/skeleton-pack
+[2]:../core/include/TXPK/Packers/PACKERS.md
+[3]:../core/include/TXPK/Exporters/EXPORTERS.md
+[4]:https://www.sfml-dev.org/index.php
+[5]:../resources/txpk_export_import.gif
+[6]:../resources/skeleton_animation.gif

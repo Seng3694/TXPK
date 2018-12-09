@@ -1,10 +1,19 @@
 cmake_minimum_required(VERSION 3.5)
 
-project (TexturePacker)
+project (TXPK)
+set(ENGINE_NAME TXPKCore)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
-set(CMAKE_CXX_STANDARD 14)
+if(CMAKE_SIZEOF_VOID_P EQUAL 8) 
+	set(CONFIGURATION "x64")
+else() 
+	set(CONFIGURATION "x86")
+endif() 
 
-add_subdirectory(engine)
+set(LUA_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/ext/LuaJIT/include")
+set(LUA_LIBRARIES "${CMAKE_SOURCE_DIR}/ext/LuaJIT/lib/${CONFIGURATION}/lua51_s.lib")
+
+add_subdirectory(ext)
+add_subdirectory(core)
+add_subdirectory(tests)
 add_subdirectory(app)
 add_subdirectory(example)
