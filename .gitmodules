@@ -4,12 +4,13 @@
 [submodule "ext/Catch2"]
 	path = ext/Catch2
 	url = https://github.com/catchorg/Catch2
-[submodule "ext/json"]
-	path = ext/json
-	url = https://github.com/nlohmann/json
 [submodule "ext/dirent"]
 	path = ext/dirent
 	url = https://github.com/tronkko/dirent
+
 [submodule "ext/lua"]
 	path = ext/lua
 	url = https://github.com/lua/lua
+[submodule "ext/json"]
+	path = ext/json
+	url = https://github.com/nlohmann/json
