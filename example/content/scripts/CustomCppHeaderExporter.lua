@@ -29,7 +29,7 @@ function export(textures, width, height, imagePath, outputDirectory, outputName)
         path = "./" .. outputName .. ".hpp"
     end
 
-    file = io.open(path, "w")
+    local file = io.open(path, "w")
 
     file:write("#pragma once\n\n")
 
@@ -38,4 +38,6 @@ function export(textures, width, height, imagePath, outputDirectory, outputName)
         file:write("#define " .. all_caps_underscore_seperated(current.path))
 		file:write(" " .. convert(current.path) .. "\n")
     end
+
+	file:close()
 end
