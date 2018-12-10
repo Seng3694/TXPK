@@ -144,9 +144,9 @@ This project outputs a `sgb.png` in the same directory which looks like this:
 This project uses [CMake][20] to generate platform and compiler-specific build files. Also note that this project uses `C++14` features 
 such as `auto` and `lambdas` and therefore requires a `C++14` compliant compiler in order to build successfully.
 
-1. Clone the repository
+1. Clone the repository (and submodules)
     ```
-    git clone https://github.com/Seng3694/TXPK
+    git clone --recurse-submodules -j8 https://github.com/Seng3694/TXPK
     ```
 2. Generate the build files
     ```
