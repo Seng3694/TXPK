@@ -5,14 +5,15 @@ set(CMAKE_CXX_STANDARD 14)
 project (TXPK)
 set(ENGINE_NAME TXPKCore)
 
-if(CMAKE_SIZEOF_VOID_P EQUAL 8) 
-	set(CONFIGURATION "x64")
-else() 
-	set(CONFIGURATION "x86")
-endif() 
-
 add_subdirectory(ext)
 add_subdirectory(core)
-add_subdirectory(tests)
+
+if(BUILD_TXPK_TESTS)
+	add_subdirectory(tests)
+endif()
+
 add_subdirectory(app)
-add_subdirectory(example)
+
+if(BUILD_TXPK_EXAMPLE)
+	add_subdirectory(example)
+endif()

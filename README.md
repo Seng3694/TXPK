@@ -162,6 +162,15 @@ such as `auto` and `lambdas` and therefore requires a `C++14` compliant compiler
 
 Alternatively if you have python installed, you could just execute the `build.py` file in the root directory.
 
+If you want to build the tests you can pass `cmake` the `-DBUILD_TXPK_TESTS=ON` argument. 
+If you want to build the example which is dependant on SFML 2.5 you need to pass `cmake` the `-DBUILD_TXPK_EXAMPLE=ON` and `-DSFML_DIR=PATH/TO/SFML`.
+Example for building everything:
+
+```
+cmake -G "Your Generator" -DBUILD_TXPK_TESTS=ON -DBUILD_TXPK_EXAMPLE=ON -DSFML_DIR="C:/Program Files/SFML/lib/cmake/SFML"
+```
+
+
 ## License ##
 This software is licensed under the MIT License. See [LICENSE][8] for more information.
 

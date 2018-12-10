@@ -4,7 +4,9 @@ else()
 	set(CONFIGURATION "x86")
 endif() 
 
-set(SFML_DIR "/home/seng/Downloads/SFML-2.5.1-linux-gcc-64-bit/SFML-2.5.1/lib/cmake/SFML")
+if(WIN32)
+	set(SFML_STATIC_LIBRARIES TRUE)
+endif()
 
 set(INCLUDE_DIRS
 	include
