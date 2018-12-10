@@ -26,7 +26,7 @@ set(SOURCES
 
 include_directories(${INCLUDE_DIRS})
 add_executable(example ${HEADERS} ${SOURCES})
-target_link_libraries(example json)
+target_link_libraries(example nlohmann_json)
 target_link_libraries(example ${ENGINE_NAME})
 
 find_package(SFML 2.5 COMPONENTS graphics REQUIRED)

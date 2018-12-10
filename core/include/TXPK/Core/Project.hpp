@@ -7,7 +7,7 @@
 #include <string>
 #include <unordered_map>
 
-#include <json.hpp>
+#include <nlohmann/json.hpp>
 
 #include "TXPK/Core/Common.hpp"
 #include "TXPK/Core/IDataExporter.hpp"

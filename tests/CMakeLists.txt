@@ -62,6 +62,7 @@ add_executable(tests ${SOURCES})
 
 target_link_libraries(tests Catch2)
 target_link_libraries(tests ${ENGINE_NAME})
+target_link_libraries(tests nlohmann_json)
 
 if(EXISTS ${CMAKE_SOURCE_DIR}/tests/content)
 	add_custom_command(

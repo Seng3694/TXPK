@@ -5,8 +5,6 @@
 #include <string>
 
 #include <lua.hpp>
-#include <lauxlib.h>
-#include <lualib.h>
 
 #include "TXPK/Core/Common.hpp"
 #include "TXPK/Core/IKeyConverter.hpp"

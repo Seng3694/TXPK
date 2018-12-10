@@ -9,9 +9,6 @@ else()
 	set(CONFIGURATION "x86")
 endif() 
 
-set(LUA_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/ext/LuaJIT/include")
-set(LUA_LIBRARIES "${CMAKE_SOURCE_DIR}/ext/LuaJIT/lib/${CONFIGURATION}/lua51_s.lib")
-
 add_subdirectory(ext)
 add_subdirectory(core)
 add_subdirectory(tests)

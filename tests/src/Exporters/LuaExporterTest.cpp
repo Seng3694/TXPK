@@ -1,6 +1,5 @@
 #include <catch2/catch.hpp>
 
-#include <json.hpp>
 #include <fstream>
 
 #include <TXPK/KeyConverters/FileWithoutExtConverter.hpp>

@@ -164,8 +164,10 @@ set(SOURCES
 )
 
 add_library(${ENGINE_NAME} ${HEADERS} ${INLINES} ${SOURCES})
-target_include_directories(${ENGINE_NAME} PUBLIC ${INCLUDE_DIR} ${LUA_INCLUDE_DIR})
-target_link_libraries(${ENGINE_NAME} json)
+target_include_directories(${ENGINE_NAME} PUBLIC ${INCLUDE_DIR})
+target_link_libraries(${ENGINE_NAME} nlohmann_json)
 target_link_libraries(${ENGINE_NAME} dirent)
 target_link_libraries(${ENGINE_NAME} stb_image)
-target_link_libraries(${ENGINE_NAME} ${LUA_LIBRARIES})
+target_link_libraries(${ENGINE_NAME} lua)
+target_link_libraries(${ENGINE_NAME} lauxlib)
+target_link_libraries(${ENGINE_NAME} lualib)

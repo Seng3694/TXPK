@@ -96,16 +96,16 @@ namespace txpk
 		lua_pushrectangle(lua, *texture.getBounds());
 		lua_setfield(lua, -2, "bounds");
 
-		lua_pushnumber(lua, texture.getOffsetX());
+		lua_pushinteger(lua, texture.getOffsetX());
 		lua_setfield(lua, -2, "offsetX");
 
-		lua_pushnumber(lua, texture.getOffsetY());
+		lua_pushinteger(lua, texture.getOffsetY());
 		lua_setfield(lua, -2, "offsetY");
 
-		lua_pushnumber(lua, texture.getSourceWidth());
+		lua_pushinteger(lua, texture.getSourceWidth());
 		lua_setfield(lua, -2, "sourceWidth");
 
-		lua_pushnumber(lua, texture.getSourceHeight());
+		lua_pushinteger(lua, texture.getSourceHeight());
 		lua_setfield(lua, -2, "sourceHeight");
 	}
 
@@ -113,16 +113,16 @@ namespace txpk
 	{
 		lua_createtable(lua, 0, 5);
 
-		lua_pushnumber(lua, rectangle.left);
+		lua_pushinteger(lua, rectangle.left);
 		lua_setfield(lua, -2, "left");
 
-		lua_pushnumber(lua, rectangle.top);
+		lua_pushinteger(lua, rectangle.top);
 		lua_setfield(lua, -2, "top");
 
-		lua_pushnumber(lua, rectangle.width);
+		lua_pushinteger(lua, rectangle.width);
 		lua_setfield(lua, -2, "width");
 
-		lua_pushnumber(lua, rectangle.height);
+		lua_pushinteger(lua, rectangle.height);
 		lua_setfield(lua, -2, "height");
 
 		lua_pushboolean(lua, rectangle.isRotated());
