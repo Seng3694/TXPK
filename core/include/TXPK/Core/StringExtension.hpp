@@ -1,5 +1,7 @@
 #pragma once
 
+#include <limits.h>
+#include <string.h>
 #include <string>
 
 #include "TXPK/Core/Common.hpp"

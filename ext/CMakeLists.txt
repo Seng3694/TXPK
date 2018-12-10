@@ -1,3 +1,5 @@
+option(JSON_BuildTests off)
+
 add_subdirectory(json)
 add_subdirectory(stb_image)
 add_subdirectory(CLI)
@@ -5,7 +7,9 @@ add_subdirectory(Catch2)
 
 #dirent
 add_library(dirent etc/dirent/dirent.c)
-target_include_directories(dirent PUBLIC dirent/include)
+if (WIN32)
+	target_include_directories(dirent PUBLIC dirent/include)
+endif()
 
 #lua
 add_library(lua

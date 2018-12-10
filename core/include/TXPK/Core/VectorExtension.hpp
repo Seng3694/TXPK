@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string.h>
 #include <vector>
 
 #include "TXPK/Core/Common.hpp"

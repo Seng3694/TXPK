@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <string.h>
 #include <string>
 
 namespace txpk

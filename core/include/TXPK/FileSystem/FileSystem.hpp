@@ -1,6 +1,7 @@
 #pragma once
 
 #include <regex>
+#include <string.h>
 #include <string>
 
 #include <dirent.h>

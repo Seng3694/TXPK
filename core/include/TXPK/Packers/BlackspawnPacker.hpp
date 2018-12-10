@@ -1,6 +1,7 @@
 #pragma once
 
 #include <algorithm>
+#include <math.h>
 #include <memory>
 #include <numeric>
 
