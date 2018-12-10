@@ -137,7 +137,7 @@ This project outputs a `sgb.png` in the same directory which looks like this:
 - [dirent][16] used for cross platform directory access.
 - [stb_image][15] used for reading and writing images.
 - [json][17] used for reading json files.
-- [LuaJIT][19] used for the Lua API.
+- [Lua][19] used for the Lua API.
 
 ## Build ##
 
@@ -185,5 +185,5 @@ This software is licensed under the MIT License. See [LICENSE][8] for more infor
 [16]:https://github.com/tronkko/dirent/blob/master/include/dirent.h
 [17]:https://github.com/nlohmann/json
 [18]:https://github.com/catchorg/Catch2
-[19]:http://luajit.org/
+[19]:http://lua.org/
 [20]:https://cmake.org/
