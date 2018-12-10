@@ -167,7 +167,7 @@ If you want to build the example which is dependant on SFML 2.5 you need to pass
 Example for building everything:
 
 ```
-cmake -G "Your Generator" -DBUILD_TXPK_TESTS=ON -DBUILD_TXPK_EXAMPLE=ON -DSFML_DIR="C:/Program Files/SFML/lib/cmake/SFML"
+cmake -G "Your Generator" -DBUILD_TXPK_TESTS=ON -DBUILD_TXPK_EXAMPLE=ON -DSFML_DIR="C:/Program Files/SFML/lib/cmake/SFML" ../TXPK
 ```
 
 
