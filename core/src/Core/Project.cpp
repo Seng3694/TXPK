@@ -123,15 +123,10 @@ namespace txpk
 
 		std::string workingDir(get_directory(name) + "/");
 
-		std::experimental::filesystem::path inputDir(inputDirectory);
-		std::experimental::filesystem::path outputImageDir(outputImageDirectory);
-		std::experimental::filesystem::path outputDataDir(outputDataDirectory);
-		std::experimental::filesystem::path scriptDir(scriptDirectory);
-
-		if (inputDir.is_relative()) inputDirectory = workingDir + inputDirectory;
-		if (outputImageDir.is_relative()) outputImageDirectory = workingDir + outputImageDirectory;
-		if (outputDataDir.is_relative()) outputDataDirectory = workingDir + outputDataDirectory;
-		if (scriptDir.is_relative()) scriptDirectory = workingDir + scriptDirectory;
+		if (is_relative(inputDirectory)) inputDirectory = workingDir + inputDirectory;
+		if (is_relative(outputImageDirectory)) outputImageDirectory = workingDir + outputImageDirectory;
+		if (is_relative(outputDataDirectory)) outputDataDirectory = workingDir + outputDataDirectory;
+		if (is_relative(scriptDirectory)) scriptDirectory = workingDir + scriptDirectory;
 
 		if (!directory_exists(inputDirectory))
 			codes |= ErrorCodes::InputDirectoryNotFound;

@@ -11,6 +11,8 @@
 
 namespace txpk
 {
+	bool is_relative(const std::string& path);
+	bool is_absolute(const std::string& path);
 	/**
 	* \brief Extracts the directory out of the path.
 	* "./some/directory/test.txt" => "./some/directory"

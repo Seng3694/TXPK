@@ -2,6 +2,40 @@
 
 #include <TXPK/FileSystem/FileSystem.hpp>
 
+TEST_CASE("is_relative tests", "[TXPK/FileSystem/FileSystem]")
+{
+	using namespace txpk;
+
+	REQUIRE(is_relative(""));
+	REQUIRE(is_relative("test"));
+
+	REQUIRE(!is_relative("C:"));
+	REQUIRE(!is_relative("C:/test"));
+
+#ifdef _WIN32
+	REQUIRE(is_relative("/test"));
+#else
+	REQUIRE(!is_relative("/test"));
+#endif
+}
+
+TEST_CASE("is_absolute tests", "[TXPK/FileSystem/FileSystem]")
+{
+	using namespace txpk;
+
+	REQUIRE(!is_absolute(""));
+	REQUIRE(!is_absolute("test"));
+
+	REQUIRE(is_absolute("C:"));
+	REQUIRE(is_absolute("C:/test"));
+
+#ifdef _WIN32
+	REQUIRE(!is_absolute("/test"));
+#else
+	REQUIRE(is_relative("/test"));
+#endif
+}
+
 TEST_CASE("get_directory tests", "[TXPK/FileSystem/FileSystem]")
 {
 	using namespace txpk;
@@ -13,7 +47,6 @@ TEST_CASE("get_directory tests", "[TXPK/FileSystem/FileSystem]")
 	REQUIRE(get_directory("C:/Users/User/Documents/bla.txt") == "C:/Users/User/Documents");
 	REQUIRE(get_directory("C:\\Users\\User\\Documents\\bla.txt") == "C:/Users/User/Documents");
 }
-
 
 TEST_CASE("get_file_name tests", "[TXPK/FileSystem/FileSystem]")
 {

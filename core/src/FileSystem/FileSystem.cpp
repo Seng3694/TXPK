@@ -6,6 +6,28 @@ namespace txpk
 	void get_files(const std::string& directory, const std::regex& regex, bool recursive, std::vector<std::shared_ptr<FileNode>>& nodes, std::shared_ptr<FileNode> currentNode);
 	void get_files(const std::string& directory, bool recursive, std::vector<std::shared_ptr<FileNode>>& nodes, std::shared_ptr<FileNode> currentNode);
 	
+	bool is_relative(const std::string& path)
+	{
+		if (path.size() == 0)
+			return true;
+
+#ifdef _WIN32
+		for (uint32 i = 0; i < static_cast<int32>(path.size()); ++i)
+			if (path[i] == ':')
+				return false;
+
+#else
+		if (path[0] == '/')
+			return false;
+#endif
+		return true;
+	}
+
+	bool is_absolute(const std::string& path)
+	{
+		return !is_relative(path);
+	}
+
 	std::string get_directory(std::string path)
 	{
 		if (path == "")
