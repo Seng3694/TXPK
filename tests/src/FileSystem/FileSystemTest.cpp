@@ -32,7 +32,7 @@ TEST_CASE("is_absolute tests", "[TXPK/FileSystem/FileSystem]")
 #ifdef _WIN32
 	REQUIRE(!is_absolute("/test"));
 #else
-	REQUIRE(is_relative("/test"));
+	REQUIRE(is_absolute("/test"));
 #endif
 }
 

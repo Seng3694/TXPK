@@ -11,15 +11,15 @@ namespace txpk
 		if (path.size() == 0)
 			return true;
 
-#ifdef _WIN32
 		for (uint32 i = 0; i < static_cast<int32>(path.size()); ++i)
 			if (path[i] == ':')
 				return false;
 
-#else
+#ifndef _WIN32
 		if (path[0] == '/')
 			return false;
 #endif
+
 		return true;
 	}
 

@@ -11,7 +11,17 @@
 
 namespace txpk
 {
+	/**
+	* \brief Checks whether the path is relative or not.
+	* \param path The path to check.
+	* \return Returns true if the path is relative.
+	*/
 	bool is_relative(const std::string& path);
+	/**
+	* \brief Checks whether the path is absolute or not.
+	* \param path The path to check.
+	* \return Returns true if the path is absolute.
+	*/
 	bool is_absolute(const std::string& path);
 	/**
 	* \brief Extracts the directory out of the path.
