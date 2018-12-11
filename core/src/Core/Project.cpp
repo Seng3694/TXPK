@@ -121,21 +121,31 @@ namespace txpk
 	{
 		ErrorCodes codes = ErrorCodes::Success;
 
-		const std::string workingDir = get_directory(name) + "/";
+		std::string workingDir(get_directory(name) + "/");
 
-		if (!directory_exists(workingDir + inputDirectory))
+		std::experimental::filesystem::path inputDir(inputDirectory);
+		std::experimental::filesystem::path outputImageDir(outputImageDirectory);
+		std::experimental::filesystem::path outputDataDir(outputDataDirectory);
+		std::experimental::filesystem::path scriptDir(scriptDirectory);
+
+		if (inputDir.is_relative()) inputDirectory = workingDir + inputDirectory;
+		if (outputImageDir.is_relative()) outputImageDirectory = workingDir + outputImageDirectory;
+		if (outputDataDir.is_relative()) outputDataDirectory = workingDir + outputDataDirectory;
+		if (scriptDir.is_relative()) scriptDirectory = workingDir + scriptDirectory;
+
+		if (!directory_exists(inputDirectory))
 			codes |= ErrorCodes::InputDirectoryNotFound;
-		if (!directory_exists(workingDir + outputImageDirectory) || !directory_exists(workingDir + outputDataDirectory))
+		if (!directory_exists(outputImageDirectory) || !directory_exists(outputDataDirectory))
 			codes |= ErrorCodes::OutputDirectoryNotFound;
 		if (!name_is_valid(outputName))
 			codes |= ErrorCodes::OutputNameInvalidCharacters;
 		if (outputImageFormat != "png" && outputImageFormat != "jpg" && outputImageFormat != "jpeg")
 			codes |= ErrorCodes::InvalidOutputFormat;
 
-		if (directory_exists(workingDir + scriptDirectory))
+		if (directory_exists(scriptDirectory))
 		{
 			typedef std::vector<std::shared_ptr<FileNode>> FileNodes;
-			FileNodes luaFiles = get_files(workingDir + scriptDirectory, "^.+(.lua)$", true);
+			FileNodes luaFiles = get_files(scriptDirectory, "^.+(.lua)$", true);
 
 			for (uint32 i = 0; i < static_cast<uint32>(luaFiles.size()); ++i)
 			{
@@ -175,11 +185,8 @@ namespace txpk
 	ErrorCodes Project::run() const
 	{
 		typedef std::vector<std::shared_ptr<FileNode>> FileNodes;
-		std::string workingDir;
-		if(name != "")
-			workingDir = get_directory(name) + "/";
 
-		FileNodes files = get_files(workingDir + inputDirectory, inputRegex, recursiveFiles);
+		FileNodes files = get_files(inputDirectory, inputRegex, recursiveFiles);
 
 		if (files.size() == 0)
 			return ErrorCodes::InputDirectoryDoesNotContainFiles;
@@ -236,7 +243,7 @@ namespace txpk
 		}
 
 		std::stringstream pathstream;
-		pathstream << workingDir << outputImageDirectory << (outputImageDirectory == "" ? "" : "/") << outputName << "." << outputImageFormat;
+		pathstream << outputImageDirectory << (outputImageDirectory == "" ? "" : "/") << outputName << "." << outputImageFormat;
 		if (!bin.save(textures, clearColor, pathstream.str(), trimImages))
 			return ErrorCodes::CouldNotCreatePackedTexture;
 
